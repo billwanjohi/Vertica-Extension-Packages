@@ -14,3 +14,16 @@ CREATE TRANSFORM FUNCTION FiveGrams            AS LANGUAGE 'C++' NAME 'FiveGrams
 CREATE FUNCTION WordCount                      AS LANGUAGE 'C++' NAME 'WordCountFactory'            LIBRARY StringsLib;
 CREATE TRANSFORM FUNCTION gen_anagram          AS LANGUAGE 'C++' NAME 'AnagramFactory'              LIBRARY StringsLib;
 CREATE TRANSFORM FUNCTION group_concat         AS LANGUAGE 'C++' NAME 'GroupConcatFactory'          LIBRARY StringsLib;
+
+GRANT ALL ON FUNCTION public.editdistance (x varchar, y varchar) TO public;
+GRANT ALL ON FUNCTION public.wordcount(x varchar) TO public;
+GRANT ALL ON FUNCTION public.stemmer (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.fivegrams (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.fourgrams (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.threegrams (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.twograms (x varchar) TO public; 
+GRANT ALL ON TRANSFORM FUNCTION public.stringtokenizer (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.stringtokenizerdelim (x varchar, y varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.gen_anagram (x varchar) TO public;
+GRANT ALL ON TRANSFORM FUNCTION public.group_concat (x varchar) TO public;
+
